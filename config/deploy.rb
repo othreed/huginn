@@ -19,7 +19,7 @@ puts "    Deploying #{branch}"
 
 set :bundle_without, [:development]
 
-server "yourdomain.com", :app, :web, :db, :primary => true
+server "192.168.178.24", :app, :web, :db, :primary => true
 
 set :sync_backups, 3
 
