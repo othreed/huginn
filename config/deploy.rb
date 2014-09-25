@@ -42,11 +42,6 @@ namespace :deploy do
     run <<-CMD
       cd #{latest_release} && ln -nfs #{shared_path}/config/Procfile #{latest_release}/Procfile
     CMD
-
-    run <<-CMD
-      cd #{latest_release} && ln -nfs #{shared_path}/config/production.rb #{latest_release}/unicorn/production.rb
-    CMD
-
   end
 end
 
