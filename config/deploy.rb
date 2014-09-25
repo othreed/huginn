@@ -48,7 +48,8 @@ end
 namespace :foreman do
   desc "Export the Procfile to Ubuntu's upstart scripts"
   task :export, :roles => :app do
-    run "cd #{latest_release} && rvmsudo bundle exec foreman export initscript /etc/init.d -a #{application} -u #{user} -l #{deploy_to}/init_logs"
+    run "cd #{latest_release} && sudo bundle exec foreman export initscript /etc/init.d -a #{application} -u #{user} -l #{deploy_to}/init_logs"
+    run "sudo chmod +x /etc/init.d/huginn"	
   end
 
   desc 'Start the application services'
