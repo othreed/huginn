@@ -10,7 +10,7 @@ set :user, "pi"
 set :use_sudo, false
 set :scm, :git
 set :rails_env, 'production'
-set :repository, "https://github.com/othreed/huginn-private.git"
+set :repository, "https://github.com/othreed/huginn.git"
 set :branch, ENV['BRANCH'] || "master"
 set :deploy_via, :remote_cache
 set :keep_releases, 5
