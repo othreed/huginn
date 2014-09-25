@@ -2,26 +2,26 @@ source 'https://rubygems.org'
 
 # Optional libraries.  To conserve RAM, comment out any that you don't need,
 # then run `bundle` and commit the updated Gemfile and Gemfile.lock.
-gem 'twilio-ruby', '~> 3.11.5'    # TwilioAgent
-gem 'ruby-growl', '~> 4.1.0'      # GrowlAgent
-gem 'net-ftp-list', '~> 3.2.8'    # FtpsiteAgent
-gem 'wunderground', '~> 1.2.0'    # WeatherAgent
-gem 'forecast_io', '~> 2.0.0'     # WeatherAgent
-gem 'rturk', '~> 2.12.1'          # HumanTaskAgent
-gem 'weibo_2', '~> 0.1.4'         # Weibo Agents
-gem 'hipchat', '~> 1.2.0'         # HipchatAgent
-gem 'xmpp4r',  '~> 0.5.6'         # JabberAgent
-gem "google-api-client"           # GoogleCalendarPublishAgent
-gem 'mqtt'                        # MQTTAgent
-gem 'slack-notifier', '~> 0.5.0'  # SlackAgent
+#gem 'twilio-ruby', '~> 3.11.5'    # TwilioAgent
+#gem 'ruby-growl', '~> 4.1.0'      # GrowlAgent
+#gem 'net-ftp-list', '~> 3.2.8'    # FtpsiteAgent
+#gem 'wunderground', '~> 1.2.0'    # WeatherAgent
+#gem 'forecast_io', '~> 2.0.0'     # WeatherAgent
+#gem 'rturk', '~> 2.12.1'          # HumanTaskAgent
+#gem 'weibo_2', '~> 0.1.4'         # Weibo Agents
+#gem 'hipchat', '~> 1.2.0'         # HipchatAgent
+#gem 'xmpp4r',  '~> 0.5.6'         # JabberAgent
+#gem "google-api-client"           # GoogleCalendarPublishAgent
+#gem 'mqtt'                        # MQTTAgent
+#gem 'slack-notifier', '~> 0.5.0'  # SlackAgent
 
 # Twitter Agents
-gem 'twitter', '~> 5.8.0' # Must to be loaded before cantino-twitter-stream.
-gem 'cantino-twitter-stream', github: 'cantino/twitter-stream', branch: 'master'
-gem 'omniauth-twitter'
+#gem 'twitter', '~> 5.8.0' # Must to be loaded before cantino-twitter-stream.
+#gem 'cantino-twitter-stream', github: 'cantino/twitter-stream', branch: 'master'
+#gem 'omniauth-twitter'
 
 # Optional Services.
-gem 'omniauth-37signals'          # BasecampAgent
+#gem 'omniauth-37signals'          # BasecampAgent
 # gem 'omniauth-github'
 
 # Bundler <1.5 does not recognize :x64_mingw as a valid platform name.
@@ -70,6 +70,7 @@ gem 'spectrum-rails'
 gem 'therubyracer', '~> 0.12.1'
 gem 'typhoeus', '~> 0.6.3'
 gem 'uglifier', '>= 1.3.0'
+gem 'foreman-export-initscript'
 
 group :development do
   gem 'better_errors', '~> 1.1'
@@ -96,6 +97,7 @@ end
 group :production do
   gem 'dotenv-deployment'
   gem 'rack'
+  gem 'unicorn', '~> 4.6.3'
 end
 
 # Platform requirements.
@@ -113,6 +115,6 @@ if ENV['ON_HEROKU'] || ENV['HEROKU_POSTGRESQL_ROSE_URL'] || File.read(File.join(
   gem 'rails_12factor'
 else
   gem 'pg', platform: :ruby_18
-  gem 'unicorn', platform: :ruby_18
+ # gem 'unicorn', platform: :ruby_18
   gem 'rails_12factor', platform: :ruby_18
 end
