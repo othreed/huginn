@@ -97,7 +97,7 @@ class HuginnScheduler
   attr_accessor :mutex
 
   def initialize
-    @rufus_scheduler = Rufus::Scheduler.new
+    @rufus_scheduler = Rufus::Scheduler.new(frequency: 3)
     self.mutex = Mutex.new
   end
 
